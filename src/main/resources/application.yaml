@@ -1,0 +1,12 @@
+server:
+  port: 8082
+---
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:25432/cuenta_movimiento_db
+    username: cuenta_movimiento_usr
+    password: cuenta_movimiento_pwd
+---
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
