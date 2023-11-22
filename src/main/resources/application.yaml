@@ -3,9 +3,9 @@ server:
 ---
 spring:
   r2dbc:
-    url: r2dbc:postgresql://localhost:25432/cuenta_movimiento_db
-    username: cuenta_movimiento_usr
-    password: cuenta_movimiento_pwd
+    url: r2dbc:postgresql://localhost:25432/banca_db
+    username: banca_usr
+    password: banca_pwd
 ---
 logging:
   level:
