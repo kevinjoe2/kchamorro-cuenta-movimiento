@@ -1,20 +1,22 @@
 package com.neoris.cuentamovimiento.vos;
 
+import com.neoris.cuentamovimiento.utils.enums.TransactionTypeEnum;
 import lombok.Builder;
 import lombok.Getter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Builder
 @Getter
 public class TransactionResponseVo {
 
-    private String transactionNumber;
+    private UUID id;
     private LocalDateTime transactionDate;
-    private String transactionType;
+    private TransactionTypeEnum transactionType;
     private BigDecimal transactionValue;
     private BigDecimal accountInitialBalance;
     private BigDecimal accountEndingBalance;
-    private String accountNumber;
+    private UUID accountId;
 }

@@ -1,5 +1,6 @@
 package com.neoris.cuentamovimiento.entities;
 
+import com.neoris.cuentamovimiento.utils.enums.AccountTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +10,7 @@ import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 @Table(name = "accounts")
 @Data
@@ -18,10 +20,11 @@ import java.math.BigDecimal;
 public class AccountEntity {
 
     @Id
-    private Long id;
+    private UUID id;
 
     @Column("account_type")
-    private String accountType;
+
+    private AccountTypeEnum accountType;
 
     @Column("balance")
     private BigDecimal balance;
@@ -29,5 +32,5 @@ public class AccountEntity {
     private String state;
 
     @Column("customer_id")
-    private Long customerId;
+    private UUID customerId;
 }

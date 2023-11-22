@@ -1,5 +1,6 @@
 package com.neoris.cuentamovimiento.entities;
 
+import com.neoris.cuentamovimiento.utils.enums.TransactionTypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +11,7 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Table(name = "transactions")
 @Data
@@ -19,16 +21,14 @@ import java.time.LocalDateTime;
 public class TransactionEntity {
 
     @Id
-    private String id;
-
-    @Column("transaction_number")
-    private String transactionNumber;
+    private UUID id;
 
     @Column("transaction_date")
     private LocalDateTime transactionDate;
 
     @Column("transaction_type")
-    private String transactionType;
+
+    private TransactionTypeEnum transactionType;
 
     @Column("transaction_value")
     private BigDecimal transactionValue;
@@ -40,6 +40,6 @@ public class TransactionEntity {
     private BigDecimal accountEndingBalance;
 
     @Column("account_id")
-    private Long accountId;
+    private UUID accountId;
 
 }

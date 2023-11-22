@@ -7,8 +7,8 @@ import reactor.core.publisher.Mono;
 
 public interface TransactionService {
     Flux<TransactionResponseVo> findAll();
-    Mono<TransactionResponseVo> save(Mono<TransactionRequestVo> transactionRequestDto);
-    Mono<TransactionResponseVo> update(Long id, Mono<TransactionRequestVo> transactionRequestDto);
-    Mono<TransactionResponseVo> patch(Long id, Mono<TransactionRequestVo> transactionRequestDto);
+    Mono<TransactionResponseVo> save(TransactionRequestVo transactionRequestDto);
+    Mono<TransactionResponseVo> update(Long id, TransactionRequestVo transactionRequestDto);
+    Mono<TransactionResponseVo> patch(Long id, TransactionRequestVo transactionRequestDto);
     Mono<Void> delete(Long id);
 }

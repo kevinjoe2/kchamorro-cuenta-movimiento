@@ -1,11 +1,20 @@
 package com.neoris.cuentamovimiento.vos;
 
-import lombok.Builder;
-import lombok.Getter;
+import com.neoris.cuentamovimiento.utils.enums.AccountTypeEnum;
+import lombok.*;
+import org.springframework.lang.NonNull;
 
+import java.math.BigDecimal;
+import java.util.UUID;
+
+@Data
 @Builder
-@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AccountRequestVo {
-    private String accountType;
-    private Long customerId;
+    @NonNull
+    private AccountTypeEnum accountType;
+    private BigDecimal balance;
+    @NonNull
+    private UUID customerId;
 }

@@ -1,15 +1,19 @@
 package com.neoris.cuentamovimiento.vos;
 
-import lombok.Builder;
-import lombok.Getter;
+import com.neoris.cuentamovimiento.utils.enums.AccountTypeEnum;
+import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
+@Data
 @Builder
-@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class AccountResponseVo {
-    private String accountType;
+    private UUID id;
+    private AccountTypeEnum accountType;
     private BigDecimal balance;
     private String state;
-    private Long customerId;
+    private UUID customerId;
 }

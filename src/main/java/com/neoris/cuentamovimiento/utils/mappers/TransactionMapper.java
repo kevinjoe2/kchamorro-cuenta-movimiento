@@ -8,5 +8,5 @@ import org.mapstruct.ReportingPolicy;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface TransactionMapper {
 
-    TransactionResponseVo toTransactionResponseDto(TransactionEntity entity, String accountNumber);
+    TransactionResponseVo toTransactionResponseVo(TransactionEntity entity);
 }
